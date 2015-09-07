@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
+                dpd.setAccentColor(getResources().getColor(R.color.primary));
                 dpd.setCancelable(false);
                 dpd.setThemeDark(false);
                 dpd.vibrate(false);
@@ -175,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 now.get(Calendar.MINUTE),
                 true
         );
+        tpd.setAccentColor(getResources().getColor(R.color.primary));
         tpd.setCancelable(false);
         tpd.setThemeDark(false);
         tpd.vibrate(false);
