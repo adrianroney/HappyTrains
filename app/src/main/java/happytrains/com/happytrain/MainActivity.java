@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
@@ -25,9 +25,10 @@ import java.util.Calendar;
 import java.util.Collections;
 
 
-public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener,
-        DatePickerDialog.OnDateSetListener {
-    EditText departureDateTime;
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener,
+      DatePickerDialog.OnDateSetListener {
+
+    private EditText departureDateTime;
     private Button mSubmitButton;
     private Spinner mDepList;
     private Spinner mArvList;
@@ -64,7 +65,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
         });
-        getActionBar().setBackgroundDrawable(new ColorDrawable(0x00bcd4));
         stationList.add("Station A");
         stationList.add("Station B");
         stationList.add("Station C");
@@ -117,12 +117,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         dialogBuilder.setTitle(R.string.validation_dialog_title);
         dialogBuilder.setMessage(R.string.validation_message);
         dialogBuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        dialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
