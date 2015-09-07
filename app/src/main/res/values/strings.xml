@@ -10,7 +10,7 @@
     <string name="title_activity_search_results">SearchResults</string>
     <string name="validation_dialog_title">Happy Trains</string>
     <string name="placeholder_for_search_results">Place Holder for Test cases</string>
-    <string name="validation_message">Please enter a value in at least one field.</string>
+    <string name="validation_message">Departure and arrival stations are the same, please review.</string>
     <string name="ok">OK</string>
     <string name="cancel">CANCEL</string>
 

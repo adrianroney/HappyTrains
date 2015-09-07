@@ -1,10 +1,8 @@
 package happytrains.com.happytrain;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -26,7 +24,7 @@ import java.util.Collections;
 
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener,
-      DatePickerDialog.OnDateSetListener {
+        DatePickerDialog.OnDateSetListener {
 
     private EditText departureDateTime;
     private Button mSubmitButton;
@@ -65,11 +63,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
         });
-        stationList.add("Station A");
-        stationList.add("Station B");
-        stationList.add("Station C");
-        stationList.add("Station D");
-        stationList.add("Station E");
+        stationList.add("A Town");
+        stationList.add("B  Town");
+        stationList.add("C  Town");
+        stationList.add("D Town");
+        stationList.add("E Town");
         mDepList = (Spinner) findViewById(R.id.departure_station_id);
         mArvList = (Spinner) findViewById(R.id.arrival_station_id);
         setupStationList();
@@ -86,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mDepList.setOnItemSelectedListener(this);
         mArvList.setAdapter(adapter);
         mArvList.setOnItemSelectedListener(this);
-
     }
 
     @Override
@@ -126,7 +123,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private boolean validationPassess() {
-        return false;
+        int selectedDep = mDepList.getSelectedItemPosition();
+        int selectedArrival = mArvList.getSelectedItemPosition();
+
+        if(selectedDep == selectedArrival) {
+            return false;
+        }
+        return true;
     }
 
     @Override
