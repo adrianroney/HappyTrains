@@ -6,5 +6,11 @@
     <string name="action_settings">Settings</string>
     <string name="departure_station">Departure station</string>
     <string name="arrival_station">Arrival station</string>
+    <string name="title_activity_search_results">SearchResults</string>
+    <string name="validation_dialog_title">Happy Trains</string>
+    <string name="placeholder_for_search_results">Place Holder for Test cases</string>
+    <string name="validation_message">Please enter a value in at least one field.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 
 </resources>
