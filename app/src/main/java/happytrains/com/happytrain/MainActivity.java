@@ -40,6 +40,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         setContentView(R.layout.activity_main);
 
         departureDateTime = (EditText) findViewById(R.id.datetime_edit_text);
+        Calendar now = Calendar.getInstance();
+        String datetime = now.get(Calendar.DATE) + "/" + now.get(Calendar.MONTH) + "/" + now.get(Calendar.YEAR) + " " + now.get(Calendar.HOUR_OF_DAY) + ":" + now.get(Calendar.MINUTE);
+        departureDateTime.setText(datetime);
+
         departureDateTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +54,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
+                dpd.setCancelable(false);
                 dpd.setThemeDark(false);
                 dpd.vibrate(false);
                 dpd.setMinDate(now);
@@ -174,6 +179,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 now.get(Calendar.MINUTE),
                 true
         );
+        tpd.setCancelable(false);
         tpd.setThemeDark(false);
         tpd.vibrate(false);
         tpd.setOnCancelListener(new DialogInterface.OnCancelListener() {
