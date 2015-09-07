@@ -162,7 +162,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getApplicationContext(), "Selected station is " + adapterView.getItemAtPosition(i), Toast.LENGTH_LONG).show();
     }
 
     @Override
