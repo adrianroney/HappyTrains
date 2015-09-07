@@ -9,10 +9,34 @@
                 tools:context=".MainActivity">
 
     <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_alignParentTop="true"
+        android:id="@+id/label_departure_station_id"
+        android:text="@string/departure_station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin" />
 
+    <Spinner
+        android:id="@+id/departure_station_id"
+        android:layout_below="@+id/label_departure_station_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:editTextStyle"/>
+
+    <TextView
+        android:id="@+id/label_arrival_station_id"
+        android:layout_below="@+id/departure_station_id"
+        android:text="@string/arrival_station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin" />
+
+    <Spinner
+        android:id="@+id/arrival_station_id"
+        android:layout_below="@+id/label_arrival_station_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:editTextStyle"/>
 
     <Button
         android:layout_alignParentBottom="true"

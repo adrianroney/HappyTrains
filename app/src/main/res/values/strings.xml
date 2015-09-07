@@ -4,5 +4,7 @@
     <string name="app_name">HappyTrain</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="departure_station">Departure station</string>
+    <string name="arrival_station">Arrival station</string>
 
 </resources>
