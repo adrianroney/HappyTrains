@@ -1,7 +1,6 @@
 package happytrains.com.happytrain;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,30 +9,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 
-import java.util.Calendar;
 
-public class MainActivity extends Activity implements
-        TimePickerDialog.OnTimeSetListener,
-        DatePickerDialog.OnDateSetListener{
-
+public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener,
+        DatePickerDialog.OnDateSetListener {
     EditText departureDateTime;
-
-public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
-private Button mSubmitButton;
+    private Button mSubmitButton;
     private Spinner mDepList;
     private Spinner mArvList;
     private ArrayList<String> stationList = new ArrayList<>();
@@ -64,7 +59,7 @@ private Button mSubmitButton;
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
         });
-		getActionBar().setBackgroundDrawable(new ColorDrawable(0x00bcd4));
+        getActionBar().setBackgroundDrawable(new ColorDrawable(0x00bcd4));
         stationList.add("Station A");
         stationList.add("Station B");
         stationList.add("Station C");
@@ -94,7 +89,7 @@ private Button mSubmitButton;
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        mSubmitButton = (Button)findViewById(R.id.submit_button);
+        mSubmitButton = (Button) findViewById(R.id.submit_button);
 
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,8 +136,8 @@ private Button mSubmitButton;
         TimePickerDialog tpd = (TimePickerDialog) getFragmentManager().findFragmentByTag("Timepickerdialog");
         DatePickerDialog dpd = (DatePickerDialog) getFragmentManager().findFragmentByTag("Datepickerdialog");
 
-        if(tpd != null) tpd.setOnTimeSetListener(this);
-        if(dpd != null) dpd.setOnDateSetListener(this);
+        if (tpd != null) tpd.setOnTimeSetListener(this);
+        if (dpd != null) dpd.setOnDateSetListener(this);
     }
 
     @Override
@@ -162,7 +157,7 @@ private Button mSubmitButton;
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getApplicationContext(), "Selected station is "+ adapterView.getItemAtPosition(i), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Selected station is " + adapterView.getItemAtPosition(i), Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -40,8 +40,10 @@
 
     <TextView
         android:id="@+id/departuretime_tv"
+        android:layout_below="@+id/arrival_station_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:text="@string/departure_time"/>
     <EditText
         android:id="@+id/datetime_edit_text"
@@ -49,6 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:editable="false"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        style="?android:editTextStyle"
         android:hint="@string/departure_time" />
 
     <Button
