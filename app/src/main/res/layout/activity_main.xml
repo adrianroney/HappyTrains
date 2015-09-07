@@ -9,6 +9,36 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_alignParentTop="true"
+        android:id="@+id/label_departure_station_id"
+        android:text="@string/departure_station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin" />
+
+    <Spinner
+        android:id="@+id/departure_station_id"
+        android:layout_below="@+id/label_departure_station_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:editTextStyle"/>
+
+    <TextView
+        android:id="@+id/label_arrival_station_id"
+        android:layout_below="@+id/departure_station_id"
+        android:text="@string/arrival_station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin" />
+
+    <Spinner
+        android:id="@+id/arrival_station_id"
+        android:layout_below="@+id/label_arrival_station_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:editTextStyle"/>
+
+    <TextView
         android:id="@+id/departuretime_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,10 +52,10 @@
         android:hint="@string/departure_time" />
 
     <Button
+        android:layout_alignParentBottom="true"
         android:id="@+id/submit_button"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:text="Submit" />
+	android:text="Book Ticket" />
 
 </RelativeLayout>
